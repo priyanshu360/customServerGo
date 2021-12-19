@@ -5,7 +5,6 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -13,9 +12,9 @@ type serverStruct struct {
 	*http.Server
 }
 
-var port = os.Getenv("PORT")
-var host = os.Getenv("HOST")
-var address = host + ":" + port
+// var port = os.Getenv("PORT")
+// var host = os.Getenv("HOST")
+var address = "0.0.0.0" + ":" + "1323"
 
 func HealthCheck(rw http.ResponseWriter, r *http.Request) {
 	log.Println("Getting health check status")
